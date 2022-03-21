@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用contains()方法检查元素是否包含指定的子元素
+        const isDescendant = parent.contains(child);
+
+        // 找出该元素是否是该元素的父元素的子元素
+        const isChild = function (element, parent) {
+            // 得到元素的父元素
+            let node = element.parentNode;
+            // 循环检查元素的父元素是否是该元素的父元素
+            while (node) {
+                // 如果该元素的父元素是该元素的父元素
+                if (node === parent) {
+                    // 返回true
+                    return true;
+                }
+                // 得到该元素的父元素的父元素
+                node = node.parentNode;
+            }
+            // 返回false
+            return false;
+        }
+    </script>
+</body>
+
+</html>

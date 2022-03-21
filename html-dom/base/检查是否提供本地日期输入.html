@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 如果当前浏览器支持本机日期输入，则返回以下函数：true<input type="date"/>
+        const isDateInputSupported = function(){
+
+            // 创建一个input element
+
+            const ele = doucment.createElement('input');
+
+            // 设置 type attribute
+
+            ele.setAttribute('type', 'date');
+
+            const isvalidValue = 'not-a-valid-date';
+
+            // 设置一个 invalid value
+            
+            ele.setAttribute('value', isvalidValue);
+
+            return ele.value !== isvalidValue;
+        }
+    </script>
+</body>
+</html>

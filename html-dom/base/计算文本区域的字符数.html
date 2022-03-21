@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="message"></textarea>
+    <div id="counter"></div>
+
+    <!-- 使用属性maxlength
+    设置用户可以在文本区域中输入的最大字符数。 -->
+    <textarea maxlength="200" id="message" cols="30" rows="10"></textarea>
+    <script>
+        // 计算字符数
+        const messageElement = document.getElementById('message');
+        const counterElement = document.getElementById('counter');
+
+        messageElement.addEventListener('input', function(e){
+            const target = e.target;
+
+            // 获取最大字符数
+            const maxLength = target.getAttribute('maxlength');
+
+            // 获取当前字符数
+            const currentLength = target.value.length;
+
+            counterElement.innerText = `${currentLength}/${maxLength}`;
+        });
+    </script>
+</body>
+</html>

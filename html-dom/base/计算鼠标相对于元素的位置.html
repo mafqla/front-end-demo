@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        element.addEventListener('mouse',function(e){
+            // 得到target
+            const target = e.target;
+
+            // 得到目标的边界target
+            const rect = target.getBoundingClientRect();
+
+            // 得到鼠标相对于元素的位置
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+
+        })
+    </script>
+</body>
+
+</html>
