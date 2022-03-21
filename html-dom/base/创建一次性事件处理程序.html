@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.使用一次选项
+      // 将处理程序到给定事件时,可以传递给该方法的最后一个参数: {once:true}addEventListener
+      const handler = function (e) {
+        // the event handler
+      };
+      element.addEventListener("click", handler, { once: true });
+
+      // 2.自行删除处理程序
+      const handler2 = function (e) {
+        // the event handler
+        element.removeEventListener(e.type, handler);
+      };
+      element.addEventListener("event-name", handler2);
+    </script>
+  </body>
+</html>

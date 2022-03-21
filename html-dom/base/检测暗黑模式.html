@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //可以通过查看媒体查询来检测该选项。prefers-color-scheme
+        // 它可以是以下值之一：
+        // light：用户希望在浅色模式下查看页面
+        // dark：用户希望在黑暗模式下查看页面
+        // no-preference：系统不知道用户首选项
+        // 通过检查此媒体查询值，我们可以确定用户是否更喜欢dark模式：
+
+        const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    </script>
+</body>
+
+</html>
