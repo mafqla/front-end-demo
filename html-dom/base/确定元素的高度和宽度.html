@@ -14,8 +14,16 @@
         const styles = window.getComputedStyle(ele);
 
         const height = ele.clientHeight - parseFloat(styles.paddingTop) - parseFloat(styles.paddingBottom);
-const width = ele.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
-        
+        const width = ele.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+
+        const clientHeight = ele.clientHeight;
+        const clientWidth = ele.clientWidth;
+
+        const offsetHeight = ele.offsetHeight;
+        const offsetWidth = ele.offsetWidth;
+
+        const heightWithMargin = ele.offsetHeight + parseFloat(styles.marginTop) + parseFloat(styles.marginBottom);
+        const widthWithMargin = ele.offsetWidth + parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
     </script>
 </body>
 
