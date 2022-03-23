@@ -45,7 +45,160 @@
     </div>
 
     <script>
+        // // 使项目可以移动
 
+        // // 拖动当前项
+        // let draggingEle;
+
+        // // 当前鼠标相对于拖动元素的位置
+        // let x = 0;
+        // let y = 0;
+
+        // const mouseDownHandler = function (e) {
+        //     draggingEle = e.target;
+
+        //     // 计算鼠标方向
+        //     const rect = draggingEle.getBoundingClientRect();
+        //     x = e.clientX - rect.left;
+        //     y = e.clientY - rect.top;
+
+        //     document.addEventListener('mousemove', mouseMoveHandler);
+        //     document.addEventListener('mouseup', mouseUpHandler);
+        // };
+        // const mouseMoveHandler = function (e) {
+        //     // 设置拖动元素的位置
+        //     dradgingELe.style.position = 'absolute';
+        //     dradgingEle.style.top = `${e.pageY-y}px`;
+        //     dradgingEle.style.left = `${e.pageX-x}px`;
+        // };
+
+        // // 事件处理程序将删除拖动项的位置样式并清理事件处理程序：mouseup
+
+        // const mouseUpHandler = function () {
+        //     // 移除position styles
+        //     dradgingELe.style.removeProperty('top');
+        //     dradgingELe.style.removeProperty('left');
+        //     dradgingELe.style.removeProperty('position');
+
+        //     x = null;
+        //     y = null;
+        //     draggingEle = null;
+
+        //     // 移除控制器mosuemove和mouseup事件处理程序
+        //     document.removeEventListener('mousemove', mouseMoveHandler);
+        //     document.removeEventListener('mouseup', mouseUpHandler);
+        // };
+
+        // // 通过循环访问项目列表将事件附加到每个项目：mousedown
+
+        // // 遍历list元素
+        // const list = document.getElementById('list');
+
+        // // 遍历所有item
+
+        // [].slice.call(list.querySelectorAll('.draggable')).forEach(function (item) {
+        //     item.addEventListener('mousedown', mouseDownHandler);
+        // });
+
+        // // 添加占位符
+        // let placeholder;
+        // let isDraggingStarted = false;
+
+        // const mouseMoveHandler = function (e) {
+        //     const dradgingRect = draggingEle.getBoundingClientRect();
+
+        //     if (!isDraggingStarted) {
+        //         // 更新flag
+        //         isDraggingStarted = true;
+
+        //         // 让placeholder带着height拖动元素
+        //         placeholder = document.createElement('div');
+        //         placeholder.classList.add('placeholder');
+        //         draggingEle.parentNode.insertBefore(
+        //             placeholder,
+        //             draggingEle.nextSibling
+        //         );
+
+        //         // 设置placeholder的高度
+        //         placeholder.style.height = `${dradgingRect.height}px`;
+        //     }
+        // }
+
+        // // 一旦用户删除项目，占位符将被删除：
+        // const mosueUpHandler = function () {
+        //     // 删除placeholder;
+        //     placeholder && placeholder.parentNode.removeChild(placeholder);
+
+        //     // 更新flag
+        //     isDraggingStarted = false;
+        // }
+
+        // // 确定用户是向上还是向下移动项目
+        // // 首先， 我们需要一个帮助程序函数来检查一个项目是否在另一个项目之上或之下。
+        // // 如果 的水平中心点小于， 则 A 被视为上述值。 节点的中心点可以通过取其顶部和高度的一半之和来计算：
+
+        // const isAbove = function (nodeA, nodeB) {
+        //     // 获取节点的边界矩形
+        //     const rectA = nodeA.getBoundingClientRect();
+        //     const rectB = nodeB.getBoundingClientRect();
+
+        //     return rectA.top + rectA.height / 2 < rectB.top + rectB.height / 2;
+        // };
+
+        // // 当用户移动项目时，我们定义上一个和下一个同级项目：
+        // const mouseMoveHandler = function (e) {
+        //     // The current order:
+        //     // prevEle
+        //     // draggingEle
+        //     // placeholder
+        //     // nextEle
+        //     const prevEle = draggingEle.previousElementSibling;
+        //     const nextEle = placeholder.nextElementSibling;
+        // };
+
+        // // 如果用户将项目移动到顶部， 我们将交换占位符和前一个项目：
+        // const mouseMoveHandler = function (e) {
+
+        //     // User moves item to the top
+        //     if (prevEle && isAbove(draggingEle, prevEle)) {
+        //         // The current order    -> The new order
+        //         // prevEle              -> placeholder
+        //         // draggingEle          -> draggingEle
+        //         // placeholder          -> prevEle
+        //         swap(placeholder, draggingEle);
+        //         swap(placeholder, prevEle);
+        //         return;
+        //     }
+        // };
+
+        // // 同样， 如果我们检测到用户将项目向下移动到底部， 我们将交换下一个并拖动项目：
+        // const mouseMoveHandler = function (e) {
+        //     // User moves the dragging element to the bottom
+        //     if (nextEle && isAbove(nextEle, draggingEle)) {
+        //         // The current order    -> The new order
+        //         // draggingEle          -> nextEle
+        //         // placeholder          -> placeholder
+        //         // nextEle              -> draggingEle
+        //         swap(nextEle, placeholder);
+        //         swap(nextEle, draggingEle);
+        //     }
+        // };
+        // // 下面是一个用于交换两个节点的小函数： swap
+        // const swap = function (nodeA, nodeB) {
+        //     const parentA = nodeA.parentNode;
+        //     const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+
+        //     // Move `nodeA` to before the `nodeB`
+        //     nodeB.parentNode.insertBefore(nodeA, nodeB);
+
+        //     // Move `nodeB` to before the sibling of `nodeA`
+        //     parentA.insertBefore(nodeB, siblingA);
+        // };
+
+
+        // DOMContentLoaded
+        // 当初始的 HTML 文档被完全加载和解析完成之后，DOMContentLoaded 事件被触发，而无需等待样式表、图像和子框架的完全加载。
+        // 实践
     </script>
 </body>
 
